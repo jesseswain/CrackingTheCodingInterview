@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class Chapter1Test {
-    Chapter1 chapter1 = new Chapter1();
+	Chapter1 chapter1 = new Chapter1();
+
 	@Test
 	public void isUniqueShouldFindDuplicates() {
 		assertFalse(chapter1.isUnique("aa"));
@@ -14,7 +15,7 @@ public class Chapter1Test {
 		assertFalse(chapter1.isUnique("circular"));
 		assertFalse(chapter1.isUnique("99"));
 		assertFalse(chapter1.isUnique("!!"));
-		
+
 		assertTrue(chapter1.isUnique("help"));
 		assertTrue(chapter1.isUnique("flask"));
 		assertTrue(chapter1.isUnique("triangle"));
@@ -24,5 +25,16 @@ public class Chapter1Test {
 		assertTrue(chapter1.isUnique("#!"));
 		assertTrue(chapter1.isUnique("cC"));
 		assertTrue(chapter1.isUnique(null));
+	}
+
+	@Test
+	public void reverse() {
+		assertEquals("kyyM", chapter1.reverse("Myyk"));
+		assertEquals("nairB", chapter1.reverse("Brian"));
+		assertEquals("*&^%", chapter1.reverse("%^&*"));
+		assertEquals("", chapter1.reverse(""));
+		assertEquals("kyyM", chapter1.reverse("Myyk"));
+		assertEquals("", chapter1.reverse(""));
+		assertEquals(null, chapter1.reverse(null));
 	}
 }
